@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.medilabo.patients.PatientTests$validationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-24T16:44:18" hostname="DESKTOP-DQI6T39" time="0.091">
+  <properties/>
+  <testcase name="validationTest()" classname="com.medilabo.patients.PatientTests$validationTests" time="0.091"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
