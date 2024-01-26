@@ -2,7 +2,6 @@ package com.medilabo.patients.domain;
 
 import java.sql.Date;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
@@ -29,7 +28,6 @@ public class Patient {
     @Column(name="lastname")
     private String lastName;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd")
     @NotNull
     @Past
     @Column(name="birthdate")
@@ -45,6 +43,7 @@ public class Patient {
     private String address;
 
     @Pattern(regexp = "\\d{10}")
+    @Column(name="phonenumber")
     private String phoneNumber;
 
     public Patient(String firstName, String lastName, Date birthDate, Gender gender, String address, String phoneNumber) {
