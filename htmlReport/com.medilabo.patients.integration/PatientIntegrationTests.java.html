@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientIntegrationTests.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tests in 'patients.test' Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.medilabo.patients.integration</a> &gt; <span class="el_source">PatientIntegrationTests.java</span></div><h1>PatientIntegrationTests.java</h1><pre class="source lang-java linenums">package com.medilabo.patients.integration;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.medilabo.patients.TestVariables;
+import com.medilabo.patients.domain.Patient;
+import com.medilabo.patients.repository.PatientRepository;
+import org.junit.jupiter.api.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.io.UnsupportedEncodingException;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@SpringBootTest
+@AutoConfigureMockMvc
+@Transactional
+<span class="fc" id="L29">public class PatientIntegrationTests extends TestVariables {</span>
+
+    @Autowired
+    MockMvc mockMvc;
+
+    @Autowired
+    PatientRepository patientRepository;
+
+    Integer databaseSizeBefore;
+
+    @BeforeAll
+    public void setUpGlobal() {
+<span class="fc" id="L41">        initializeVariables();</span>
+<span class="fc" id="L42">        patientRepository.save(patient);</span>
+<span class="fc" id="L43">        patientId = patient.getIdPatient();</span>
+<span class="fc" id="L44">    }</span>
+
+    @AfterAll
+    public void cleanUpDatabase() {
+<span class="fc" id="L48">        patientRepository.deleteById(patientId);</span>
+<span class="fc" id="L49">    }</span>
+
+    @BeforeEach
+    public void setUpPerTest() {
+<span class="fc" id="L53">        initializeVariables();</span>
+<span class="fc" id="L54">        databaseSizeBefore = patientRepository.findAll().size();</span>
+<span class="fc" id="L55">    }</span>
+
+    private Integer databaseSizeChange() {
+<span class="fc" id="L58">        return patientRepository.findAll().size() - databaseSizeBefore;</span>
+    }
+
+    private Boolean resultEqualsPatient(MvcResult result, Patient patient) throws UnsupportedEncodingException, JsonProcessingException {
+<span class="fc" id="L62">        ObjectMapper objectMapper = new ObjectMapper();</span>
+<span class="fc" id="L63">        Patient resultPatient = objectMapper.readValue(result.getResponse().getContentAsString(), Patient.class);</span>
+        
+<span class="pc bpc" id="L65" title="1 of 2 branches missed.">        return resultPatient.getFirstName().equals(patient.getFirstName())</span>
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">                &amp;&amp; resultPatient.getLastName().equals(patient.getLastName())</span>
+<span class="pc bpc" id="L67" title="1 of 2 branches missed.">                &amp;&amp; resultPatient.getBirthDate().toLocalDate().equals(patient.getBirthDate().toLocalDate())</span>
+<span class="pc bpc" id="L68" title="1 of 2 branches missed.">                &amp;&amp; resultPatient.getGender().equals(patient.getGender())</span>
+<span class="pc bpc" id="L69" title="1 of 2 branches missed.">                &amp;&amp; resultPatient.getAddress().equals(patient.getAddress())</span>
+<span class="pc bpc" id="L70" title="1 of 2 branches missed.">                &amp;&amp; resultPatient.getPhoneNumber().equals(patient.getPhoneNumber());</span>
+    }
+
+    @Test
+<span class="fc" id="L74">    public void contextLoads() {}</span>
+
+    @Nested
+<span class="fc" id="L77">    public class addPatientTests {</span>
+        @Test
+        public void addPatientTest() throws Exception {
+<span class="fc" id="L80">            MvcResult result = mockMvc.perform(post(&quot;/add&quot;)</span>
+<span class="fc" id="L81">                            .contentType(MediaType.APPLICATION_JSON)</span>
+<span class="fc" id="L82">                            .content(patient.toJson().toString()))</span>
+<span class="fc" id="L83">                    .andExpect(status().is2xxSuccessful())</span>
+<span class="fc" id="L84">                    .andReturn();</span>
+
+<span class="fc" id="L86">            patient.setIdPatient(patientId);</span>
+<span class="fc" id="L87">            assertTrue(resultEqualsPatient(result, patient));</span>
+<span class="fc" id="L88">            assertEquals(1, databaseSizeChange());</span>
+<span class="fc" id="L89">        }</span>
+    }
+
+    @Nested
+<span class="fc" id="L93">    public class getPatientByIdTests {</span>
+        @Test
+        public void getPatientByIdTest() throws Exception {
+<span class="fc" id="L96">            MvcResult result = mockMvc.perform(get(&quot;/get&quot;).param(&quot;id&quot;, String.valueOf(patientId)))</span>
+<span class="fc" id="L97">                    .andExpect(status().is2xxSuccessful())</span>
+<span class="fc" id="L98">                    .andReturn();</span>
+
+<span class="fc" id="L100">            patient.setIdPatient(patientId);</span>
+<span class="fc" id="L101">            assertTrue(resultEqualsPatient(result, patient));</span>
+<span class="fc" id="L102">            assertEquals(0, databaseSizeChange());</span>
+<span class="fc" id="L103">        }</span>
+    }
+
+   @Nested
+<span class="fc" id="L107">    public class updatePatientTests {</span>
+       @Test
+       public void updatePatientTest() throws Exception {
+<span class="fc" id="L110">           MvcResult result = mockMvc.perform(post(&quot;/update/&quot; + patientId)</span>
+<span class="fc" id="L111">                           .contentType(MediaType.APPLICATION_JSON)</span>
+<span class="fc" id="L112">                           .content(patient.toJson().toString()))</span>
+<span class="fc" id="L113">                   .andExpect(status().is2xxSuccessful())</span>
+<span class="fc" id="L114">                   .andReturn();</span>
+
+<span class="fc" id="L116">           patient.setIdPatient(patientId);</span>
+<span class="fc" id="L117">           assertTrue(resultEqualsPatient(result, patient));</span>
+<span class="fc" id="L118">           assertEquals(0, databaseSizeChange());</span>
+<span class="fc" id="L119">       }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

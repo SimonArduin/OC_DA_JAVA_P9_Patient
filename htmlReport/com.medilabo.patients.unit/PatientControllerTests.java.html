@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientControllerTests.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tests in 'patients.test' Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.medilabo.patients.unit</a> &gt; <span class="el_source">PatientControllerTests.java</span></div><h1>PatientControllerTests.java</h1><pre class="source lang-java linenums">package com.medilabo.patients.unit;
+
+import com.medilabo.patients.TestVariables;
+import com.medilabo.patients.controller.PatientController;
+import com.medilabo.patients.domain.Patient;
+import com.medilabo.patients.service.PatientService;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.validation.BindingResult;
+
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+
+@SpringBootTest(classes = PatientController.class)
+<span class="fc" id="L22">public class PatientControllerTests extends TestVariables {</span>
+
+    @Autowired
+    PatientController patientController;
+
+    @MockBean
+    PatientService patientService;
+
+    @MockBean
+    BindingResult bindingResult;
+
+    @BeforeEach
+    public void setUpPerTest() {
+<span class="fc" id="L35">        initializeVariables();</span>
+<span class="fc" id="L36">        patient.setIdPatient(1);</span>
+<span class="fc" id="L37">        when(patientService.findById(any(Integer.class))).thenReturn(Optional.of(patient));</span>
+<span class="fc" id="L38">        when(patientService.savePatient(any(Patient.class))).thenReturn(patient);</span>
+<span class="fc" id="L39">        when(bindingResult.hasErrors()).thenReturn(false);</span>
+<span class="fc" id="L40">    }</span>
+
+    @Test
+<span class="fc" id="L43">    public void contextLoads() {}</span>
+
+    @Nested
+<span class="fc" id="L46">    public class addPatientTests {</span>
+        @Test
+        public void addPatientTest() {
+<span class="fc" id="L49">            assertTrue(patient.equals(patientController.addPatient(patient, bindingResult)));</span>
+<span class="fc" id="L50">        }</span>
+
+        @Test
+        public void addPatientTestIfNotPatientValid() {
+<span class="fc" id="L54">            when(bindingResult.hasErrors()).thenReturn(true);</span>
+<span class="fc" id="L55">            assertNull(patientController.addPatient(patient, bindingResult));</span>
+<span class="fc" id="L56">        }</span>
+    }
+
+    @Nested
+<span class="fc" id="L60">    public class getPatientByIdTests {</span>
+        @Test
+        public void getPatientByIdTest() {
+<span class="fc" id="L63">            assertTrue(patient.equals(patientController.getPatientById(patient.getIdPatient())));</span>
+<span class="fc" id="L64">        }</span>
+    }
+
+    @Nested
+<span class="fc" id="L68">    public class updatePatientTests {</span>
+        @Test
+        public void updatePatientTest() {
+<span class="fc" id="L71">            assertTrue(patient.equals(patientController.updatePatient(patient, bindingResult, patient.getIdPatient())));</span>
+<span class="fc" id="L72">        }</span>
+
+        @Test
+        public void updatePatientTestIfNotValidPatient() {
+<span class="fc" id="L76">            when(bindingResult.hasErrors()).thenReturn(true);</span>
+<span class="fc" id="L77">            assertNull(patientController.updatePatient(patient, bindingResult, patient.getIdPatient()));</span>
+<span class="fc" id="L78">        }</span>
+
+        @Test
+        public void updatePatientTestIfPatientNotInDB() {
+<span class="fc" id="L82">            when(patientService.findById(any(Integer.class))).thenReturn(Optional.empty());</span>
+<span class="pc" id="L83">            assertThrows(IllegalArgumentException.class, () -&gt; patientController.updatePatient(patient, bindingResult, patient.getIdPatient()));</span>
+<span class="fc" id="L84">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

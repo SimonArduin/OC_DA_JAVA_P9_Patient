@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.UnitTests.PatientControllerTests$addPatientTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-26T14:37:31" hostname="DESKTOP-DQI6T39" time="0.034">
-  <properties/>
-  <testcase name="addPatientTestIfNotPatientValid()" classname="com.medilabo.patients.UnitTests.PatientControllerTests$addPatientTests" time="0.01"/>
-  <testcase name="addPatientTest()" classname="com.medilabo.patients.UnitTests.PatientControllerTests$addPatientTests" time="0.015"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

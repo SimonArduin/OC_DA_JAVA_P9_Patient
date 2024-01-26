@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientServiceTests.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tests in 'patients.test' Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.medilabo.patients.unit</a> &gt; <span class="el_source">PatientServiceTests.java</span></div><h1>PatientServiceTests.java</h1><pre class="source lang-java linenums">package com.medilabo.patients.unit;
+
+import com.medilabo.patients.TestVariables;
+import com.medilabo.patients.service.PatientService;
+import com.medilabo.patients.domain.Patient;
+import com.medilabo.patients.repository.PatientRepository;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.validation.BindingResult;
+
+import java.util.Optional;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+
+@SpringBootTest(classes = PatientService.class)
+<span class="fc" id="L22">public class PatientServiceTests extends TestVariables {</span>
+
+    @Autowired
+    PatientService patientService;
+
+    @MockBean
+    PatientRepository patientRepository;
+
+    @MockBean
+    BindingResult bindingResult;
+
+    @BeforeEach
+    public void setUpPerTest() {
+<span class="fc" id="L35">        initializeVariables();</span>
+<span class="fc" id="L36">        patient.setIdPatient(1);</span>
+<span class="fc" id="L37">        when(patientRepository.findById(any(Integer.class))).thenReturn(Optional.of(patient));</span>
+<span class="fc" id="L38">        when(patientRepository.save(any(Patient.class))).thenReturn(patient);</span>
+<span class="fc" id="L39">        when(bindingResult.hasErrors()).thenReturn(false);</span>
+<span class="fc" id="L40">    }</span>
+
+    @Test
+<span class="fc" id="L43">    public void contextLoads() {}</span>
+
+    @Nested
+<span class="fc" id="L46">    public class savePatientTests {</span>
+        @Test
+        public void savePatientTest() {
+<span class="fc" id="L49">            Patient actual = patientService.savePatient(patient);</span>
+<span class="fc" id="L50">            assertEquals(patient, actual);</span>
+<span class="fc" id="L51">        }</span>
+    }
+
+    @Nested
+<span class="fc" id="L55">    public class findByIdTests {</span>
+        @Test
+        public void findByIdTest() {
+<span class="fc" id="L58">            Patient actual = patientService.findById(patient.getIdPatient()).get();</span>
+<span class="fc" id="L59">            assertEquals(patient, actual);</span>
+<span class="fc" id="L60">        }</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,8 +1,8 @@
 package com.medilabo.patients.domain;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
@@ -29,6 +29,7 @@ public class Patient {
     @Column(name="lastname")
     private String lastName;
 
+    //@JsonFormat(pattern = "yyyy-MM-dd")
     @NotNull
     @Past
     @Column(name="birthdate")
@@ -117,10 +118,7 @@ public class Patient {
         patientJson.put("idPatient", this.idPatient);
         patientJson.put("firstName", this.firstName);
         patientJson.put("lastName", this.lastName);
-
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        patientJson.put("birthDate", dateFormat.format(this.birthDate));
-
+        patientJson.put("birthDate", this.birthDate);
         patientJson.put("gender", this.gender.toString());
         patientJson.put("address", this.address);
         patientJson.put("phoneNumber", this.phoneNumber);

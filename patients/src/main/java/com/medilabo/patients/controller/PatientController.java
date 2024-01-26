@@ -3,32 +3,40 @@ package com.medilabo.patients.controller;
 import com.medilabo.patients.domain.Patient;
 import com.medilabo.patients.service.PatientService;
 import jakarta.validation.Valid;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PatientController {
 
     @Autowired
     PatientService patientService;
-    public JSONObject addPatient(@Valid Patient patient, BindingResult bindingResult) {
+
+    @PostMapping("add")
+    @ResponseBody
+    public Patient addPatient(@Valid @RequestBody Patient patient, BindingResult bindingResult) {
         if(!bindingResult.hasErrors()) {
-            return patientService.savePatient(patient).toJson();
+            return patientService.savePatient(patient);
         }
-        return new JSONObject();
+        return null;
     }
 
-    public JSONObject getPatientById(Integer id) {
-        return patientService.findById(id).get().toJson();
+    @GetMapping("get")
+    @ResponseBody
+    public Patient getPatientById(Integer id) {
+        return patientService.findById(id).get();
     }
 
-    public JSONObject updatePatient(@Valid Patient patient, BindingResult bindingResult, Integer id) {
+    @PostMapping("update/{id}")
+    @ResponseBody
+    public Patient updatePatient(@Valid @RequestBody Patient patient, BindingResult bindingResult, @PathVariable("id") Integer id) {
         if(!bindingResult.hasErrors()) {
             patientService.findById(id).orElseThrow((() -> new IllegalArgumentException("Invalid patient Id:" + id)));
-            return patientService.savePatient(patient).toJson();
+            patient.setIdPatient(id);
+            return patientService.savePatient(patient);
         }
-        return new JSONObject();
+        return null;
     }
 }

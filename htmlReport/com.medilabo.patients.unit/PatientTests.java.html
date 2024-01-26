@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PatientTests.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tests in 'patients.test' Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.medilabo.patients.unit</a> &gt; <span class="el_source">PatientTests.java</span></div><h1>PatientTests.java</h1><pre class="source lang-java linenums">package com.medilabo.patients.unit;
+
+import com.medilabo.patients.TestVariables;
+import com.medilabo.patients.domain.Patient;
+import org.junit.jupiter.api.*;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
+
+import java.util.Set;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+@SpringBootTest(classes = Patient.class)
+<span class="fc" id="L19">public class PatientTests extends TestVariables {</span>
+
+<span class="fc" id="L21">    ValidatorFactory factory = Validation.buildDefaultValidatorFactory();</span>
+<span class="fc" id="L22">    Validator validator = factory.getValidator();</span>
+
+    @BeforeEach
+    public void setUpPerTest() {
+<span class="fc" id="L26">        initializeVariables();</span>
+<span class="fc" id="L27">    }</span>
+
+    @Test
+<span class="fc" id="L30">    public void contextLoads() {}</span>
+
+    @Nested
+<span class="fc" id="L33">    public class validationTests {</span>
+
+        @Test
+        public void validationTest() {
+<span class="fc" id="L37">            Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L38">            assertTrue(violations.isEmpty());</span>
+<span class="fc" id="L39">        }</span>
+
+        @Nested
+<span class="fc" id="L42">        public class firstNameTests {</span>
+
+            @Test
+            public void firstNameNotNull() {
+<span class="fc" id="L46">                patient.setFirstName(null);</span>
+<span class="fc" id="L47">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L48">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L49">            }</span>
+
+            @Test
+            public void firstNameSize() {
+<span class="fc" id="L53">                patient.setFirstName(string46);</span>
+<span class="fc" id="L54">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L55">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L56">            }</span>
+        }
+
+        @Nested
+<span class="fc" id="L60">        public class lastNameTests {</span>
+
+            @Test
+            public void lastNameNotNull() {
+<span class="fc" id="L64">                patient.setLastName(null);</span>
+<span class="fc" id="L65">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L66">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L67">            }</span>
+
+            @Test
+            public void lastNameSize() {
+<span class="fc" id="L71">                patient.setLastName(string46);</span>
+<span class="fc" id="L72">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L73">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L74">            }</span>
+        }
+
+        @Nested
+<span class="fc" id="L78">        public class birthDateTests {</span>
+
+            @Test
+            public void birthDateNotNull() {
+<span class="fc" id="L82">                patient.setBirthDate(null);</span>
+<span class="fc" id="L83">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L84">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L85">            }</span>
+
+            @Test
+            public void birthDatePast() {
+<span class="fc" id="L89">                patient.setBirthDate(dateFuture);</span>
+<span class="fc" id="L90">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L91">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L92">            }</span>
+        }
+        
+        @Nested
+<span class="fc" id="L96">        public class genderTests {</span>
+            
+            @Test
+            public void genderNotNull() {
+<span class="fc" id="L100">                patient.setGender(null);</span>
+<span class="fc" id="L101">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L102">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L103">            }</span>
+        }
+
+        @Nested
+<span class="fc" id="L107">        public class addressTests {</span>
+
+            @Test
+            public void addressSize() {
+<span class="fc" id="L111">                patient.setAddress(string46);</span>
+<span class="fc" id="L112">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L113">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L114">            }</span>
+        }
+
+        @Nested
+<span class="fc" id="L118">        public class phoneNumberTests {</span>
+
+            @Test
+            public void phoneNumberSizeTooBig() {
+<span class="fc" id="L122">                patient.setPhoneNumber(string46);</span>
+<span class="fc" id="L123">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L124">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L125">            }</span>
+
+            @Test
+            public void phoneNumberSizeTooSmall() {
+<span class="fc" id="L129">                patient.setPhoneNumber(string9);</span>
+<span class="fc" id="L130">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L131">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L132">            }</span>
+
+            @Test
+            public void phoneNumberNonNumerical() {
+<span class="fc" id="L136">                patient.setPhoneNumber(string10NonNumerical);</span>
+<span class="fc" id="L137">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L138">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L139">            }</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
