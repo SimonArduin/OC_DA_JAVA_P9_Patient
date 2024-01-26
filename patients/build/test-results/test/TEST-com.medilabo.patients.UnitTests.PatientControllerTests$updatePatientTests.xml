@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.medilabo.patients.UnitTests.PatientControllerTests$updatePatientTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-01-26T14:37:30" hostname="DESKTOP-DQI6T39" time="0.057">
+  <properties/>
+  <testcase name="updatePatientTestIfPatientNotInDB()" classname="com.medilabo.patients.UnitTests.PatientControllerTests$updatePatientTests" time="0.021"/>
+  <testcase name="updatePatientTest()" classname="com.medilabo.patients.UnitTests.PatientControllerTests$updatePatientTests" time="0.015"/>
+  <testcase name="updatePatientTestIfNotValidPatient()" classname="com.medilabo.patients.UnitTests.PatientControllerTests$updatePatientTests" time="0.009"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
