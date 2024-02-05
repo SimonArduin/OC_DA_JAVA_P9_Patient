@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-26T20:44:18" hostname="DESKTOP-DQI6T39" time="0.024">
+<testsuite name="com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-05T10:50:52" hostname="DESKTOP-DQI6T39" time="0.025">
   <properties/>
-  <testcase name="addPatientTest()" classname="com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests" time="0.024"/>
-  <system-out><![CDATA[2024-01-26T21:44:18.903+01:00  INFO 4744 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests]: addPatientTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-01-26T21:44:18.907+01:00  INFO 4744 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.medilabo.patients.PatientsApplication for test class com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests
+  <testcase name="addPatientTest()" classname="com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests" time="0.025"/>
+  <system-out><![CDATA[2024-02-05T11:50:52.752+01:00  INFO 16528 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests]: addPatientTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-02-05T11:50:52.755+01:00  INFO 16528 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.medilabo.patients.PatientsApplication for test class com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

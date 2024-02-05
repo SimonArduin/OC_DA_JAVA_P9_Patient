@@ -13,7 +13,7 @@
 <h1>updatePatientTests</h1>
 <div class="breadcrumbs">
 <a href="../index.html">all</a> &gt; 
-<a href="../packages/com.medilabo.patients.integration.html">com.medilabo.patients.integration</a> &gt; PatientIntegrationTests$updatePatientTests</div>
+<a href="../packages/com.medilabo.patients.unit.html">com.medilabo.patients.unit</a> &gt; PatientControllerTests$updatePatientTests</div>
 <div id="summary">
 <table>
 <tr>
@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">1</div>
+<div class="counter">3</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.210s</div>
+<div class="counter">0.065s</div>
 <p>duration</p>
 </div>
 </td>
@@ -63,9 +63,6 @@
 <li>
 <a href="#tab0">Tests</a>
 </li>
-<li>
-<a href="#tab1">Standard output</a>
-</li>
 </ul>
 <div id="tab0" class="tab">
 <h2>Tests</h2>
@@ -79,18 +76,20 @@
 </thead>
 <tr>
 <td class="success">updatePatientTest()</td>
-<td class="success">0.210s</td>
+<td class="success">0.011s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updatePatientTestIfNotValidPatient()</td>
+<td class="success">0.039s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">updatePatientTestIfPatientNotInDB()</td>
+<td class="success">0.015s</td>
 <td class="success">passed</td>
 </tr>
 </table>
-</div>
-<div id="tab1" class="tab">
-<h2>Standard output</h2>
-<span class="code">
-<pre>2024-02-05T11:50:52.483+01:00  INFO 16528 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests]: updatePatientTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-02-05T11:50:52.496+01:00  INFO 16528 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.medilabo.patients.PatientsApplication for test class com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests
-</pre>
-</span>
 </div>
 </div>
 <div id="footer">

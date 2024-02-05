@@ -26,7 +26,7 @@ CREATE TABLE `patient` (
   `idpatient` int NOT NULL AUTO_INCREMENT,
   `firstname` varchar(45) NOT NULL,
   `lastname` varchar(45) NOT NULL,
-  `birthdate` date DEFAULT NULL,
+  `birthdate` date NOT NULL,
   `gender` tinyint NOT NULL,
   `address` varchar(45) DEFAULT NULL,
   `phonenumber` varchar(10) DEFAULT NULL,
