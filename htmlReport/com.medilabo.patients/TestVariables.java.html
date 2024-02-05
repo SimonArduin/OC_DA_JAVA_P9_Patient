@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="fr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TestVariables.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tests in 'patients.test' Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.medilabo.patients</a> &gt; <span class="el_source">TestVariables.java</span></div><h1>TestVariables.java</h1><pre class="source lang-java linenums">package com.medilabo.patients;
+
+import com.medilabo.patients.domain.Patient;
+
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Year;
+import java.lang.String;
+
+<span class="fc" id="L11">public class TestVariables {</span>
+    public Patient patient;
+    public Integer patientId;
+    public String string46;
+    public String string9;
+    public String string10NonNumerical;
+    public Date datePast;
+    public Date dateFuture;
+
+    public void initializeVariables() {
+        // objects used for validation tests
+<span class="fc" id="L22">        string46 = &quot;0&quot;.repeat(46);</span>
+<span class="fc" id="L23">        string9 = &quot;0&quot;.repeat(9);</span>
+<span class="fc" id="L24">        string10NonNumerical = &quot;X&quot;.repeat(10);</span>
+<span class="fc" id="L25">        datePast = Date.valueOf(LocalDate.now().minusYears(1));</span>
+<span class="fc" id="L26">        dateFuture = Date.valueOf(LocalDate.now().plusYears(1));</span>
+
+        // valid patient used for tests
+<span class="fc" id="L29">        patient = new Patient(&quot;firstName&quot;, &quot;lastName&quot;, datePast, Patient.Gender.OTHER, &quot;address&quot;, &quot;0123456789&quot;);</span>
+<span class="fc" id="L30">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
