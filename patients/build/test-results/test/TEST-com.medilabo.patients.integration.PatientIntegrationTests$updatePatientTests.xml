@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-05T10:50:52" hostname="DESKTOP-DQI6T39" time="0.21">
+<testsuite name="com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-06T12:19:14" hostname="DESKTOP-DQI6T39" time="0.236">
   <properties/>
-  <testcase name="updatePatientTest()" classname="com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests" time="0.21"/>
-  <system-out><![CDATA[2024-02-05T11:50:52.483+01:00  INFO 16528 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests]: updatePatientTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-02-05T11:50:52.496+01:00  INFO 16528 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.medilabo.patients.PatientsApplication for test class com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests
+  <testcase name="updatePatientTest()" classname="com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests" time="0.236"/>
+  <system-out><![CDATA[2024-02-06T13:19:14.139+01:00  INFO 13828 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests]: updatePatientTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-02-06T13:19:14.146+01:00  INFO 13828 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.medilabo.patients.PatientsApplication for test class com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

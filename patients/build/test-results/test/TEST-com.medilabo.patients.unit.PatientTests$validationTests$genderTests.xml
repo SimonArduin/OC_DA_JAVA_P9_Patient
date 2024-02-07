@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.unit.PatientTests$validationTests$genderTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-05T10:50:54" hostname="DESKTOP-DQI6T39" time="0.015">
+<testsuite name="com.medilabo.patients.unit.PatientTests$validationTests$genderTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-06T12:19:15" hostname="DESKTOP-DQI6T39" time="0.008">
   <properties/>
-  <testcase name="genderNotNull()" classname="com.medilabo.patients.unit.PatientTests$validationTests$genderTests" time="0.015"/>
+  <testcase name="genderNotNull()" classname="com.medilabo.patients.unit.PatientTests$validationTests$genderTests" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
