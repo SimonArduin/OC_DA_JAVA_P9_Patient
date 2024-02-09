@@ -1,13 +1,13 @@
 package com.medilabo.patients;
 
 import com.medilabo.patients.domain.Patient;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.time.Month;
-import java.time.Year;
 import java.lang.String;
 
+@SpringBootTest
 public class TestVariables {
     public Patient patient;
     public Integer patientId;

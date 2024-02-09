@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-02-06T12:19:14" hostname="DESKTOP-DQI6T39" time="0.031">
+<testsuite name="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-02-09T10:47:54" hostname="DESKTOP-DQI6T39" time="0.164">
   <properties/>
-  <testcase name="updatePatientTestIfPatientNotInDB()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.013"/>
-  <testcase name="updatePatientTest()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.005"/>
-  <testcase name="updatePatientTestIfNotValidPatient()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.006"/>
+  <testcase name="updatePatientTestIfPatientNotInDB()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.063"/>
+  <testcase name="updatePatientTest()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.057"/>
+  <testcase name="updatePatientTestIfNotValidPatient()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
