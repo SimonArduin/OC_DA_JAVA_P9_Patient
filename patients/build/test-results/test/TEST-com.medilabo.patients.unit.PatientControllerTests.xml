@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.unit.PatientControllerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-05T10:50:53" hostname="DESKTOP-DQI6T39" time="0.048">
+<testsuite name="com.medilabo.patients.unit.PatientControllerTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-09T10:47:54" hostname="DESKTOP-DQI6T39" time="0.087">
   <properties/>
-  <testcase name="contextLoads()" classname="com.medilabo.patients.unit.PatientControllerTests" time="0.048"/>
+  <testcase name="contextLoads()" classname="com.medilabo.patients.unit.PatientControllerTests" time="0.087"/>
   <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -11,7 +11,7 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.2)
 
-2024-02-05T11:50:52.870+01:00  WARN 16528 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+2024-02-09T11:47:53.773+01:00  WARN 16836 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
 
 Found multiple occurrences of org.json.JSONObject on the class path:
 
@@ -20,9 +20,9 @@ Found multiple occurrences of org.json.JSONObject on the class path:
 
 You may wish to exclude one of them to ensure predictable runtime behavior
 
-2024-02-05T11:50:52.874+01:00  INFO 16528 --- [    Test worker] c.m.p.unit.PatientControllerTests        : Starting PatientControllerTests using Java 17.0.7 with PID 16528 (started by simon in C:\Users\simon\Documents\OpenClassrooms\Projets\09 Développez une solution en microservices pour votre client\Microservices\OC_DA_JAVA_P9_Patient\patients)
-2024-02-05T11:50:52.875+01:00  INFO 16528 --- [    Test worker] c.m.p.unit.PatientControllerTests        : No active profile set, falling back to 1 default profile: "default"
-2024-02-05T11:50:53.224+01:00  INFO 16528 --- [    Test worker] c.m.p.unit.PatientControllerTests        : Started PatientControllerTests in 0.401 seconds (process running for 8.429)
+2024-02-09T11:47:53.791+01:00  INFO 16836 --- [    Test worker] c.m.p.unit.PatientControllerTests        : Starting PatientControllerTests using Java 17.0.7 with PID 16836 (started by simon in C:\Users\simon\Documents\OpenClassrooms\Projets\09 Développez une solution en microservices pour votre client\Microservices\OC_DA_JAVA_P9_Patient\patients)
+2024-02-09T11:47:53.793+01:00  INFO 16836 --- [    Test worker] c.m.p.unit.PatientControllerTests        : No active profile set, falling back to 1 default profile: "default"
+2024-02-09T11:47:54.429+01:00  INFO 16836 --- [    Test worker] c.m.p.unit.PatientControllerTests        : Started PatientControllerTests in 0.717 seconds (process running for 16.917)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

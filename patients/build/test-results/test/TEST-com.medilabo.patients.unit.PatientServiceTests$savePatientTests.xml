@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.unit.PatientServiceTests$savePatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-05T10:50:54" hostname="DESKTOP-DQI6T39" time="0.002">
+<testsuite name="com.medilabo.patients.unit.PatientServiceTests$savePatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-09T10:47:55" hostname="DESKTOP-DQI6T39" time="0.003">
   <properties/>
-  <testcase name="savePatientTest()" classname="com.medilabo.patients.unit.PatientServiceTests$savePatientTests" time="0.002"/>
+  <testcase name="savePatientTest()" classname="com.medilabo.patients.unit.PatientServiceTests$savePatientTests" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
