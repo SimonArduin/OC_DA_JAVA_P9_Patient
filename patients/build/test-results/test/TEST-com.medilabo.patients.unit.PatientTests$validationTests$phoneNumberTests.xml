@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-02-09T10:47:56" hostname="DESKTOP-DQI6T39" time="0.187">
+<testsuite name="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-02-14T10:06:12" hostname="DESKTOP-DQI6T39" time="1.152">
   <properties/>
-  <testcase name="phoneNumberNonNumerical()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.148"/>
-  <testcase name="phoneNumberSizeTooBig()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.012"/>
-  <testcase name="phoneNumberSizeTooSmall()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.011"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="phoneNumberNonNumerical()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="1.069"/>
+  <testcase name="phoneNumberSizeTooBig()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.022"/>
+  <testcase name="phoneNumberNull()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.012"/>
+  <testcase name="phoneNumberSizeTooSmall()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.023"/>
+  <system-out><![CDATA[11:06:11.759 [Test worker] INFO org.hibernate.validator.internal.util.Version -- HV000001: Hibernate Validator 8.0.1.Final
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.2)
+
+2024-02-14T11:06:12.421+01:00  WARN 948 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/C:/Users/simon/.gradle/caches/modules-2/files-2.1/org.json/json/20231013/e22e0c040fe16f04ffdb85d851d77b07fc05ea52/json-20231013.jar!/org/json/JSONObject.class
+	jar:file:/C:/Users/simon/.gradle/caches/modules-2/files-2.1/com.vaadin.external.google/android-json/0.0.20131108.vaadin1/fa26d351fe62a6a17f5cda1287c1c6110dec413f/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2024-02-14T11:06:12.471+01:00  INFO 948 --- [    Test worker] c.medilabo.patients.unit.PatientTests    : Starting PatientTests using Java 17.0.7 with PID 948 (started by simon in C:\Users\simon\Documents\OpenClassrooms\Projets\09 Développez une solution en microservices pour votre client\Microservices\OC_DA_JAVA_P9_Patient\patients)
+2024-02-14T11:06:12.472+01:00  INFO 948 --- [    Test worker] c.medilabo.patients.unit.PatientTests    : No active profile set, falling back to 1 default profile: "default"
+2024-02-14T11:06:12.780+01:00  INFO 948 --- [    Test worker] c.medilabo.patients.unit.PatientTests    : Started PatientTests in 0.693 seconds (process running for 2.698)
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

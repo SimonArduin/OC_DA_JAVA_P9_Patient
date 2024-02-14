@@ -118,6 +118,13 @@ public class PatientTests extends TestVariables {
         public class phoneNumberTests {
 
             @Test
+            public void phoneNumberNull() {
+                patient.setPhoneNumber(null);
+                Set<ConstraintViolation<Patient>> violations = validator.validate(patient);
+                assertTrue(violations.isEmpty());
+            }
+
+            @Test
             public void phoneNumberSizeTooBig() {
                 patient.setPhoneNumber(string46);
                 Set<ConstraintViolation<Patient>> violations = validator.validate(patient);

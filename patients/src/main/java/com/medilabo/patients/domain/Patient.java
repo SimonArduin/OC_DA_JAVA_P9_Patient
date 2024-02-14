@@ -42,7 +42,7 @@ public class Patient {
     @Size(max = 45)
     private String address;
 
-    @Pattern(regexp = "\\d{10}")
+    @Pattern(regexp = "^$|\\d{10}")
     @Column(name="phonenumber")
     private String phoneNumber;
 
