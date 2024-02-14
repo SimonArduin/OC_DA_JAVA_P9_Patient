@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.medilabo.patients.unit.PatientControllerTests$addPatientTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-14T11:39:45" hostname="DESKTOP-DQI6T39" time="0.018">
+  <properties/>
+  <testcase name="addPatientTestIfNotPatientValid()" classname="com.medilabo.patients.unit.PatientControllerTests$addPatientTests" time="0.008"/>
+  <testcase name="addPatientTest()" classname="com.medilabo.patients.unit.PatientControllerTests$addPatientTests" time="0.006"/>
+  <system-out><![CDATA[2024-02-14T12:39:45.838+01:00 ERROR 1696 --- [    Test worker] c.m.p.controller.PatientController       : received incorrect request to add patient : {"firstName":"firstName","lastName":"lastName","address":"address","phoneNumber":"0123456789","gender":"OTHER","idPatient":1,"birthDate":"2023-02-14"}, errors are : []
+2024-02-14T12:39:45.848+01:00  INFO 1696 --- [    Test worker] c.m.p.controller.PatientController       : received request to add patient firstName lastName
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

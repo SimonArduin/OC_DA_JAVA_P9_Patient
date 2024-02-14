@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.medilabo.patients.unit.PatientServiceTests$findByIdTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-14T11:39:46" hostname="DESKTOP-DQI6T39" time="0.007">
+  <properties/>
+  <testcase name="findByIdTest()" classname="com.medilabo.patients.unit.PatientServiceTests$findByIdTests" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

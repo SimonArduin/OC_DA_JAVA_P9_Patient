@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 
 import java.util.Optional;
@@ -19,7 +20,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest(classes = PatientController.class)
-<span class="fc" id="L22">public class PatientControllerTests extends TestVariables {</span>
+<span class="fc" id="L23">public class PatientControllerTests extends TestVariables {</span>
 
     @Autowired
     PatientController patientController;
@@ -32,56 +33,56 @@ import static org.mockito.Mockito.when;
 
     @BeforeEach
     public void setUpPerTest() {
-<span class="fc" id="L35">        initializeVariables();</span>
-<span class="fc" id="L36">        patient.setIdPatient(1);</span>
-<span class="fc" id="L37">        when(patientService.findById(any(Integer.class))).thenReturn(Optional.of(patient));</span>
-<span class="fc" id="L38">        when(patientService.savePatient(any(Patient.class))).thenReturn(patient);</span>
-<span class="fc" id="L39">        when(bindingResult.hasErrors()).thenReturn(false);</span>
-<span class="fc" id="L40">    }</span>
+<span class="fc" id="L36">        initializeVariables();</span>
+<span class="fc" id="L37">        patient.setIdPatient(1);</span>
+<span class="fc" id="L38">        when(patientService.findById(any(Integer.class))).thenReturn(Optional.of(patient));</span>
+<span class="fc" id="L39">        when(patientService.savePatient(any(Patient.class))).thenReturn(patient);</span>
+<span class="fc" id="L40">        when(bindingResult.hasErrors()).thenReturn(false);</span>
+<span class="fc" id="L41">    }</span>
 
     @Test
-<span class="fc" id="L43">    public void contextLoads() {}</span>
+<span class="fc" id="L44">    public void contextLoads() {}</span>
 
     @Nested
-<span class="fc" id="L46">    public class addPatientTests {</span>
+<span class="fc" id="L47">    public class addPatientTests {</span>
         @Test
         public void addPatientTest() {
-<span class="fc" id="L49">            assertTrue(patient.equals(patientController.addPatient(patient, bindingResult)));</span>
-<span class="fc" id="L50">        }</span>
+<span class="fc" id="L50">            assertTrue(patient.equals(patientController.addPatient(patient, bindingResult).getBody()));</span>
+<span class="fc" id="L51">        }</span>
 
         @Test
         public void addPatientTestIfNotPatientValid() {
-<span class="fc" id="L54">            when(bindingResult.hasErrors()).thenReturn(true);</span>
-<span class="fc" id="L55">            assertNull(patientController.addPatient(patient, bindingResult));</span>
-<span class="fc" id="L56">        }</span>
+<span class="fc" id="L55">            when(bindingResult.hasErrors()).thenReturn(true);</span>
+<span class="fc" id="L56">            assertEquals(HttpStatus.BAD_REQUEST, patientController.addPatient(patient, bindingResult).getStatusCode());</span>
+<span class="fc" id="L57">        }</span>
     }
 
     @Nested
-<span class="fc" id="L60">    public class getPatientByIdTests {</span>
+<span class="fc" id="L61">    public class getPatientByIdTests {</span>
         @Test
         public void getPatientByIdTest() {
-<span class="fc" id="L63">            assertTrue(patient.equals(patientController.getPatientById(patient.getIdPatient())));</span>
-<span class="fc" id="L64">        }</span>
+<span class="fc" id="L64">            assertTrue(patient.equals(patientController.getPatientById(patient.getIdPatient()).getBody()));</span>
+<span class="fc" id="L65">        }</span>
     }
 
     @Nested
-<span class="fc" id="L68">    public class updatePatientTests {</span>
+<span class="fc" id="L69">    public class updatePatientTests {</span>
         @Test
         public void updatePatientTest() {
-<span class="fc" id="L71">            assertTrue(patient.equals(patientController.updatePatient(patient, bindingResult, patient.getIdPatient())));</span>
-<span class="fc" id="L72">        }</span>
+<span class="fc" id="L72">            assertTrue(patient.equals(patientController.updatePatient(patient, bindingResult, patient.getIdPatient()).getBody()));</span>
+<span class="fc" id="L73">        }</span>
 
         @Test
         public void updatePatientTestIfNotValidPatient() {
-<span class="fc" id="L76">            when(bindingResult.hasErrors()).thenReturn(true);</span>
-<span class="fc" id="L77">            assertNull(patientController.updatePatient(patient, bindingResult, patient.getIdPatient()));</span>
-<span class="fc" id="L78">        }</span>
+<span class="fc" id="L77">            when(bindingResult.hasErrors()).thenReturn(true);</span>
+<span class="fc" id="L78">            assertEquals(HttpStatus.BAD_REQUEST, patientController.updatePatient(patient, bindingResult, patient.getIdPatient()).getStatusCode());</span>
+<span class="fc" id="L79">        }</span>
 
         @Test
         public void updatePatientTestIfPatientNotInDB() {
-<span class="fc" id="L82">            when(patientService.findById(any(Integer.class))).thenReturn(Optional.empty());</span>
-<span class="pc" id="L83">            assertThrows(IllegalArgumentException.class, () -&gt; patientController.updatePatient(patient, bindingResult, patient.getIdPatient()));</span>
-<span class="fc" id="L84">        }</span>
+<span class="fc" id="L83">            when(patientService.findById(any(Integer.class))).thenReturn(Optional.empty());</span>
+<span class="pc" id="L84">            assertThrows(IllegalArgumentException.class, () -&gt; patientController.updatePatient(patient, bindingResult, patient.getIdPatient()));</span>
+<span class="fc" id="L85">        }</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -118,25 +118,32 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 <span class="fc" id="L118">        public class phoneNumberTests {</span>
 
             @Test
-            public void phoneNumberSizeTooBig() {
-<span class="fc" id="L122">                patient.setPhoneNumber(string46);</span>
+            public void phoneNumberNull() {
+<span class="fc" id="L122">                patient.setPhoneNumber(null);</span>
 <span class="fc" id="L123">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
-<span class="fc" id="L124">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L124">                assertTrue(violations.isEmpty());</span>
 <span class="fc" id="L125">            }</span>
 
             @Test
-            public void phoneNumberSizeTooSmall() {
-<span class="fc" id="L129">                patient.setPhoneNumber(string9);</span>
+            public void phoneNumberSizeTooBig() {
+<span class="fc" id="L129">                patient.setPhoneNumber(string46);</span>
 <span class="fc" id="L130">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
 <span class="fc" id="L131">                assertFalse(violations.isEmpty());</span>
 <span class="fc" id="L132">            }</span>
 
             @Test
-            public void phoneNumberNonNumerical() {
-<span class="fc" id="L136">                patient.setPhoneNumber(string10NonNumerical);</span>
+            public void phoneNumberSizeTooSmall() {
+<span class="fc" id="L136">                patient.setPhoneNumber(string9);</span>
 <span class="fc" id="L137">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
 <span class="fc" id="L138">                assertFalse(violations.isEmpty());</span>
 <span class="fc" id="L139">            }</span>
+
+            @Test
+            public void phoneNumberNonNumerical() {
+<span class="fc" id="L143">                patient.setPhoneNumber(string10NonNumerical);</span>
+<span class="fc" id="L144">                Set&lt;ConstraintViolation&lt;Patient&gt;&gt; violations = validator.validate(patient);</span>
+<span class="fc" id="L145">                assertFalse(violations.isEmpty());</span>
+<span class="fc" id="L146">            }</span>
         }
     }
 }
