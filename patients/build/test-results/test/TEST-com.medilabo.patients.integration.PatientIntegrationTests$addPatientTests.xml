@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-14T11:39:45" hostname="DESKTOP-DQI6T39" time="0.023">
+  <properties/>
+  <testcase name="addPatientTest()" classname="com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests" time="0.023"/>
+  <system-out><![CDATA[2024-02-14T12:39:45.169+01:00  INFO 1696 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests]: addPatientTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-02-14T12:39:45.173+01:00  INFO 1696 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.medilabo.patients.PatientsApplication for test class com.medilabo.patients.integration.PatientIntegrationTests$addPatientTests
+2024-02-14T12:39:45.188+01:00  INFO 1696 --- [    Test worker] c.m.p.controller.PatientController       : received request to add patient firstName lastName
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -3,41 +3,58 @@
 import com.medilabo.patients.domain.Patient;
 import com.medilabo.patients.service.PatientService;
 import jakarta.validation.Valid;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-<span class="fc" id="L12">public class PatientController {</span>
+<span class="fc" id="L17">public class PatientController {</span>
 
     @Autowired
     PatientService patientService;
 
+<span class="fc" id="L22">    private static final Logger logger = LoggerFactory.getLogger(PatientController.class);</span>
+
     @PostMapping(&quot;add&quot;)
-    @ResponseBody
-    public Patient addPatient(@Valid @RequestBody Patient patient, BindingResult bindingResult) {
-<span class="fc bfc" id="L20" title="All 2 branches covered.">        if(!bindingResult.hasErrors()) {</span>
-<span class="fc" id="L21">            return patientService.savePatient(patient);</span>
+    public ResponseEntity addPatient(@Valid @RequestBody Patient patient, BindingResult bindingResult) {
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        if(!bindingResult.hasErrors()) {</span>
+<span class="fc" id="L27">            logger.info(&quot;received request to add patient &quot; + patient.getFirstName() + &quot; &quot; + patient.getLastName());</span>
+<span class="fc" id="L28">            return ResponseEntity.created(null).body(patientService.savePatient(patient));</span>
         }
-<span class="fc" id="L23">        return null;</span>
+<span class="fc" id="L30">        logger.error(&quot;received incorrect request to add patient : &quot; + patient.toJson() + &quot;, errors are : &quot; + bindingResult.getFieldErrors());</span>
+<span class="fc" id="L31">        String errorMessage = new String();</span>
+<span class="pc bpc" id="L32" title="1 of 2 branches missed.">        for(FieldError error : bindingResult.getFieldErrors()) {</span>
+<span class="nc" id="L33">            errorMessage = errorMessage + &quot;error in field : &quot; + error.getField() + &quot;, rejected value : &quot; + error.getRejectedValue() + &quot;\n&quot;;</span>
+<span class="nc" id="L34">        }</span>
+<span class="fc" id="L35">        return new ResponseEntity(errorMessage, HttpStatus.BAD_REQUEST);</span>
     }
 
     @GetMapping(&quot;get&quot;)
-    @ResponseBody
-    public Patient getPatientById(Integer id) {
-<span class="fc" id="L29">        return patientService.findById(id).get();</span>
+    public ResponseEntity getPatientById(Integer id) {
+<span class="fc" id="L40">        logger.info(&quot;received request to get patient &quot; + id);</span>
+<span class="fc" id="L41">        return ResponseEntity.ok().body(patientService.findById(id).get());</span>
     }
 
-    @PostMapping(&quot;update/{id}&quot;)
-    @ResponseBody
-    public Patient updatePatient(@Valid @RequestBody Patient patient, BindingResult bindingResult, @PathVariable(&quot;id&quot;) Integer id) {
-<span class="fc bfc" id="L35" title="All 2 branches covered.">        if(!bindingResult.hasErrors()) {</span>
-<span class="fc" id="L36">            patientService.findById(id).orElseThrow((() -&gt; new IllegalArgumentException(&quot;Invalid patient Id:&quot; + id)));</span>
-<span class="fc" id="L37">            patient.setIdPatient(id);</span>
-<span class="fc" id="L38">            return patientService.savePatient(patient);</span>
+    @PutMapping(&quot;update/{id}&quot;)
+    public ResponseEntity updatePatient(@Valid @RequestBody Patient patient, BindingResult bindingResult, @PathVariable(&quot;id&quot;) Integer id) {
+<span class="fc bfc" id="L46" title="All 2 branches covered.">        if(!bindingResult.hasErrors()) {</span>
+<span class="fc" id="L47">            patientService.findById(id).orElseThrow((() -&gt; new IllegalArgumentException(&quot;Invalid patient Id:&quot; + id)));</span>
+<span class="fc" id="L48">            patient.setIdPatient(id);</span>
+<span class="fc" id="L49">            logger.info(&quot;received request to update patient &quot; + patient.getIdPatient());</span>
+<span class="fc" id="L50">            return ResponseEntity.created(null).body(patientService.savePatient(patient));</span>
         }
-<span class="fc" id="L40">        return null;</span>
+<span class="fc" id="L52">        logger.error(&quot;received incorrect request to update patient &quot; + id + &quot;, errors are : &quot; + bindingResult.getFieldErrors());</span>
+<span class="fc" id="L53">        String errorMessage = new String();</span>
+<span class="pc bpc" id="L54" title="1 of 2 branches missed.">        for(FieldError error : bindingResult.getFieldErrors()) {</span>
+<span class="nc" id="L55">            errorMessage = errorMessage + &quot;error in field : &quot; + error.getField() + &quot;, rejected value : &quot; + error.getRejectedValue() + &quot;\n&quot;;</span>
+<span class="nc" id="L56">        }</span>
+<span class="fc" id="L57">        return ResponseEntity.badRequest().build();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindingResult;
 
 import java.util.Optional;
@@ -46,13 +47,13 @@ public class PatientControllerTests extends TestVariables {
     public class addPatientTests {
         @Test
         public void addPatientTest() {
-            assertTrue(patient.equals(patientController.addPatient(patient, bindingResult)));
+            assertTrue(patient.equals(patientController.addPatient(patient, bindingResult).getBody()));
         }
 
         @Test
         public void addPatientTestIfNotPatientValid() {
             when(bindingResult.hasErrors()).thenReturn(true);
-            assertNull(patientController.addPatient(patient, bindingResult));
+            assertEquals(HttpStatus.BAD_REQUEST, patientController.addPatient(patient, bindingResult).getStatusCode());
         }
     }
 
@@ -60,7 +61,7 @@ public class PatientControllerTests extends TestVariables {
     public class getPatientByIdTests {
         @Test
         public void getPatientByIdTest() {
-            assertTrue(patient.equals(patientController.getPatientById(patient.getIdPatient())));
+            assertTrue(patient.equals(patientController.getPatientById(patient.getIdPatient()).getBody()));
         }
     }
 
@@ -68,13 +69,13 @@ public class PatientControllerTests extends TestVariables {
     public class updatePatientTests {
         @Test
         public void updatePatientTest() {
-            assertTrue(patient.equals(patientController.updatePatient(patient, bindingResult, patient.getIdPatient())));
+            assertTrue(patient.equals(patientController.updatePatient(patient, bindingResult, patient.getIdPatient()).getBody()));
         }
 
         @Test
         public void updatePatientTestIfNotValidPatient() {
             when(bindingResult.hasErrors()).thenReturn(true);
-            assertNull(patientController.updatePatient(patient, bindingResult, patient.getIdPatient()));
+            assertEquals(HttpStatus.BAD_REQUEST, patientController.updatePatient(patient, bindingResult, patient.getIdPatient()).getStatusCode());
         }
 
         @Test

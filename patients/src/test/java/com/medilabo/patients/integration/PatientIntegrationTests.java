@@ -20,6 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -107,7 +108,7 @@ public class PatientIntegrationTests extends TestVariables {
     public class updatePatientTests {
        @Test
        public void updatePatientTest() throws Exception {
-           MvcResult result = mockMvc.perform(post("/update/" + patientId)
+           MvcResult result = mockMvc.perform(put("/update/" + patientId)
                            .contentType(MediaType.APPLICATION_JSON)
                            .content(patient.toJson().toString()))
                    .andExpect(status().is2xxSuccessful())
