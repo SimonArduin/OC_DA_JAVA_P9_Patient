@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-02-14T11:39:45" hostname="DESKTOP-DQI6T39" time="0.048">
+<testsuite name="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-02-15T12:47:09" hostname="DESKTOP-DQI6T39" time="0.061">
   <properties/>
-  <testcase name="updatePatientTestIfPatientNotInDB()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.015"/>
-  <testcase name="updatePatientTest()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.01"/>
+  <testcase name="updatePatientTestIfPatientNotInDB()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.029"/>
+  <testcase name="updatePatientTest()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.008"/>
   <testcase name="updatePatientTestIfNotValidPatient()" classname="com.medilabo.patients.unit.PatientControllerTests$updatePatientTests" time="0.008"/>
-  <system-out><![CDATA[2024-02-14T12:39:45.772+01:00  INFO 1696 --- [    Test worker] c.m.p.controller.PatientController       : received request to update patient 1
-2024-02-14T12:39:45.790+01:00 ERROR 1696 --- [    Test worker] c.m.p.controller.PatientController       : received incorrect request to update patient 1, errors are : []
+  <system-out><![CDATA[2024-02-15T13:47:09.568+01:00  INFO 12848 --- [    Test worker] c.m.p.controller.PatientController       : received request to update patient 1
+2024-02-15T13:47:09.589+01:00 ERROR 12848 --- [    Test worker] c.m.p.controller.PatientController       : received incorrect request to update patient 1, errors are : []
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

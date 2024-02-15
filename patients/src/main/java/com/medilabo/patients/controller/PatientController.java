@@ -41,6 +41,12 @@ public class PatientController {
         return ResponseEntity.ok().body(patientService.findById(id).get());
     }
 
+    @GetMapping("getall")
+    public ResponseEntity getAll() {
+        logger.info("received request to get all patients ");
+        return ResponseEntity.ok().body(patientService.findAll());
+    }
+
     @PutMapping("update/{id}")
     public ResponseEntity updatePatient(@Valid @RequestBody Patient patient, BindingResult bindingResult, @PathVariable("id") Integer id) {
         if(!bindingResult.hasErrors()) {

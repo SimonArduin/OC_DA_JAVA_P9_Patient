@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-02-14T11:39:46" hostname="DESKTOP-DQI6T39" time="0.083">
+<testsuite name="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" tests="4" skipped="0" failures="0" errors="0" timestamp="2024-02-15T12:47:10" hostname="DESKTOP-DQI6T39" time="0.148">
   <properties/>
-  <testcase name="phoneNumberNonNumerical()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.035"/>
-  <testcase name="phoneNumberSizeTooBig()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.007"/>
-  <testcase name="phoneNumberNull()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.008"/>
-  <testcase name="phoneNumberSizeTooSmall()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.014"/>
+  <testcase name="phoneNumberNonNumerical()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.043"/>
+  <testcase name="phoneNumberSizeTooBig()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.034"/>
+  <testcase name="phoneNumberNull()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.036"/>
+  <testcase name="phoneNumberSizeTooSmall()" classname="com.medilabo.patients.unit.PatientTests$validationTests$phoneNumberTests" time="0.012"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

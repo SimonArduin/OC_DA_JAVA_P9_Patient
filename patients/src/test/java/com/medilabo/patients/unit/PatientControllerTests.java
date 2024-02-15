@@ -35,6 +35,7 @@ public class PatientControllerTests extends TestVariables {
     public void setUpPerTest() {
         initializeVariables();
         patient.setIdPatient(1);
+        when(patientService.findAll()).thenReturn(patientList);
         when(patientService.findById(any(Integer.class))).thenReturn(Optional.of(patient));
         when(patientService.savePatient(any(Patient.class))).thenReturn(patient);
         when(bindingResult.hasErrors()).thenReturn(false);
@@ -62,6 +63,14 @@ public class PatientControllerTests extends TestVariables {
         @Test
         public void getPatientByIdTest() {
             assertTrue(patient.equals(patientController.getPatientById(patient.getIdPatient()).getBody()));
+        }
+    }
+
+    @Nested
+    public class getAllTests {
+        @Test
+        public void getAllTest() {
+            assertTrue(patientList.equals(patientController.getAll().getBody()));
         }
     }
 
