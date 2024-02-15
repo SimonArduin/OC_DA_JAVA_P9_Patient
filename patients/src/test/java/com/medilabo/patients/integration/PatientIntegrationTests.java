@@ -1,5 +1,6 @@
 package com.medilabo.patients.integration;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.medilabo.patients.TestVariables;
@@ -15,6 +16,7 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -100,6 +102,22 @@ public class PatientIntegrationTests extends TestVariables {
 
             patient.setIdPatient(patientId);
             assertTrue(resultEqualsPatient(result, patient));
+            assertEquals(0, databaseSizeChange());
+        }
+    }
+
+    @Nested
+    public class getAllTests {
+        @Test
+        public void getAllTest() throws Exception {
+            MvcResult result = mockMvc.perform(get("/getall"))
+                    .andExpect(status().is2xxSuccessful())
+                    .andReturn();
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            List<Patient> resultList = objectMapper.readValue(result.getResponse().getContentAsString(), new TypeReference<List<Patient>>() {});
+
+            assertEquals(databaseSizeBefore, resultList.size());
             assertEquals(0, databaseSizeChange());
         }
     }

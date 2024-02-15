@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.unit.PatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-14T11:39:46" hostname="DESKTOP-DQI6T39" time="0.005">
+<testsuite name="com.medilabo.patients.unit.PatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-15T12:47:10" hostname="DESKTOP-DQI6T39" time="0.002">
   <properties/>
-  <testcase name="contextLoads()" classname="com.medilabo.patients.unit.PatientTests" time="0.005"/>
+  <testcase name="contextLoads()" classname="com.medilabo.patients.unit.PatientTests" time="0.002"/>
   <system-out><![CDATA[
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -11,7 +11,7 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.2)
 
-2024-02-14T12:39:46.130+01:00  WARN 1696 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+2024-02-15T13:47:09.989+01:00  WARN 12848 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
 
 Found multiple occurrences of org.json.JSONObject on the class path:
 
@@ -20,9 +20,9 @@ Found multiple occurrences of org.json.JSONObject on the class path:
 
 You may wish to exclude one of them to ensure predictable runtime behavior
 
-2024-02-14T12:39:46.132+01:00  INFO 1696 --- [    Test worker] c.medilabo.patients.unit.PatientTests    : Starting PatientTests using Java 17.0.7 with PID 1696 (started by simon in C:\Users\simon\Documents\OpenClassrooms\Projets\09 Développez une solution en microservices pour votre client\Microservices\OC_DA_JAVA_P9_Patient\patients)
-2024-02-14T12:39:46.132+01:00  INFO 1696 --- [    Test worker] c.medilabo.patients.unit.PatientTests    : No active profile set, falling back to 1 default profile: "default"
-2024-02-14T12:39:46.146+01:00  INFO 1696 --- [    Test worker] c.medilabo.patients.unit.PatientTests    : Started PatientTests in 0.049 seconds (process running for 9.676)
+2024-02-15T13:47:09.996+01:00  INFO 12848 --- [    Test worker] c.medilabo.patients.unit.PatientTests    : Starting PatientTests using Java 17.0.7 with PID 12848 (started by simon in C:\Users\simon\Documents\OpenClassrooms\Projets\09 Développez une solution en microservices pour votre client\Microservices\OC_DA_JAVA_P9_Patient\patients)
+2024-02-15T13:47:09.997+01:00  INFO 12848 --- [    Test worker] c.medilabo.patients.unit.PatientTests    : No active profile set, falling back to 1 default profile: "default"
+2024-02-15T13:47:10.013+01:00  INFO 12848 --- [    Test worker] c.medilabo.patients.unit.PatientTests    : Started PatientTests in 0.066 seconds (process running for 10.645)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

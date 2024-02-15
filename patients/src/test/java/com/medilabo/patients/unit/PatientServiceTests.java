@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.validation.BindingResult;
 
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -34,6 +35,7 @@ public class PatientServiceTests extends TestVariables {
     public void setUpPerTest() {
         initializeVariables();
         patient.setIdPatient(1);
+        when(patientRepository.findAll()).thenReturn(patientList);
         when(patientRepository.findById(any(Integer.class))).thenReturn(Optional.of(patient));
         when(patientRepository.save(any(Patient.class))).thenReturn(patient);
         when(bindingResult.hasErrors()).thenReturn(false);
@@ -57,6 +59,15 @@ public class PatientServiceTests extends TestVariables {
         public void findByIdTest() {
             Patient actual = patientService.findById(patient.getIdPatient()).get();
             assertEquals(patient, actual);
+        }
+    }
+
+    @Nested
+    public class findAllTests {
+        @Test
+        public void findAllTest() {
+            List<Patient> actual = patientService.findAll();
+            assertEquals(patientList, actual);
         }
     }
 }
