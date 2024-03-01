@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.unit.PatientControllerTests$addPatientTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-02-15T12:47:09" hostname="DESKTOP-DQI6T39" time="0.014">
+<testsuite name="com.medilabo.patients.unit.PatientControllerTests$addPatientTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-03-01T10:50:43" hostname="DESKTOP-DQI6T39" time="0.017">
   <properties/>
-  <testcase name="addPatientTestIfNotPatientValid()" classname="com.medilabo.patients.unit.PatientControllerTests$addPatientTests" time="0.008"/>
-  <testcase name="addPatientTest()" classname="com.medilabo.patients.unit.PatientControllerTests$addPatientTests" time="0.003"/>
-  <system-out><![CDATA[2024-02-15T13:47:09.670+01:00 ERROR 12848 --- [    Test worker] c.m.p.controller.PatientController       : received incorrect request to add patient : {"firstName":"firstName","lastName":"lastName","address":"address","phoneNumber":"0123456789","gender":"OTHER","idPatient":1,"birthDate":"2023-02-15"}, errors are : []
-2024-02-15T13:47:09.677+01:00  INFO 12848 --- [    Test worker] c.m.p.controller.PatientController       : received request to add patient firstName lastName
+  <testcase name="addPatientTestIfNotPatientValid()" classname="com.medilabo.patients.unit.PatientControllerTests$addPatientTests" time="0.007"/>
+  <testcase name="addPatientTest()" classname="com.medilabo.patients.unit.PatientControllerTests$addPatientTests" time="0.004"/>
+  <system-out><![CDATA[2024-03-01T11:50:43.579+01:00 ERROR 12720 --- [    Test worker] c.m.p.controller.PatientController       : received incorrect request to add patient : {"firstName":"firstName","lastName":"lastName","address":"address","phoneNumber":"0123456789","gender":"OTHER","idPatient":1,"birthDate":"2023-03-01"}, errors are : []
+2024-03-01T11:50:43.590+01:00  INFO 12720 --- [    Test worker] c.m.p.controller.PatientController       : received request to add patient firstName lastName
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

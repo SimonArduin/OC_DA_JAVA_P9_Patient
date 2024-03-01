@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-15T12:47:08" hostname="DESKTOP-DQI6T39" time="0.272">
+<testsuite name="com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-01T10:50:42" hostname="DESKTOP-DQI6T39" time="0.241">
   <properties/>
-  <testcase name="updatePatientTest()" classname="com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests" time="0.272"/>
-  <system-out><![CDATA[2024-02-15T13:47:08.420+01:00  INFO 12848 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests]: updatePatientTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-02-15T13:47:08.424+01:00  INFO 12848 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.medilabo.patients.PatientsApplication for test class com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests
-2024-02-15T13:47:08.619+01:00  INFO 12848 --- [    Test worker] c.m.p.controller.PatientController       : received request to update patient 5852
+  <testcase name="updatePatientTest()" classname="com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests" time="0.241"/>
+  <system-out><![CDATA[2024-03-01T11:50:42.416+01:00  INFO 12720 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests]: updatePatientTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-03-01T11:50:42.420+01:00  INFO 12720 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.medilabo.patients.PatientsApplication for test class com.medilabo.patients.integration.PatientIntegrationTests$updatePatientTests
+2024-03-01T11:50:42.596+01:00  INFO 12720 --- [    Test worker] c.m.p.controller.PatientController       : received request to update patient 5952
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
