@@ -40,7 +40,7 @@ CREATE TABLE `patient` (
 
 LOCK TABLES `patient` WRITE;
 /*!40000 ALTER TABLE `patient` DISABLE KEYS */;
-INSERT INTO `patient` VALUES (1,'TestNone','Test','1966-12-31',1,'1 Brookside St','1002223333'),(2,'TestBorderline','Test','1945-06-24',0,'2 High St','2003334444'),(3,'TestInDanger','Test','2004-06-18',1,'3 Club Road','3004445555'),(4,'TestEarlyOnset','Test','2002-06-28',0,'4 Valley Dr','4005556666');
+INSERT INTO `patient` VALUES (1,'TestNone','Test','1966-12-31',1,'1 Brookside St','1002223333'),(2,'TestBorderline','Test','1945-06-24',0,'2 High St','2003334444'),(3,'TestInDanger','Test','2004-06-18',0,'3 Club Road','3004445555'),(4,'TestEarlyOnset','Test','2002-06-28',1,'4 Valley Dr','4005556666');
 /*!40000 ALTER TABLE `patient` ENABLE KEYS */;
 UNLOCK TABLES;
 
