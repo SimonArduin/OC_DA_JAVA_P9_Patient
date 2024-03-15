@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.medilabo.patients.unit.PatientsApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-02-15T12:47:12" hostname="DESKTOP-DQI6T39" time="0.003">
+<testsuite name="com.medilabo.patients.unit.PatientsApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-03-01T10:50:47" hostname="DESKTOP-DQI6T39" time="0.004">
   <properties/>
-  <testcase name="contextLoads()" classname="com.medilabo.patients.unit.PatientsApplicationTests" time="0.003"/>
-  <system-out><![CDATA[2024-02-15T13:47:10.368+01:00  INFO 12848 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.medilabo.patients.unit.PatientsApplicationTests]: PatientsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2024-02-15T13:47:10.396+01:00  INFO 12848 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.medilabo.patients.PatientsApplication for test class com.medilabo.patients.unit.PatientsApplicationTests
+  <testcase name="contextLoads()" classname="com.medilabo.patients.unit.PatientsApplicationTests" time="0.004"/>
+  <system-out><![CDATA[2024-03-01T11:50:44.631+01:00  INFO 12720 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.medilabo.patients.unit.PatientsApplicationTests]: PatientsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-03-01T11:50:44.651+01:00  INFO 12720 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.medilabo.patients.PatientsApplication for test class com.medilabo.patients.unit.PatientsApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -13,7 +13,7 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.2)
 
-2024-02-15T13:47:10.433+01:00  WARN 12848 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
+2024-03-01T11:50:44.696+01:00  WARN 12720 --- [    Test worker] ory$DuplicateJsonObjectContextCustomizer : 
 
 Found multiple occurrences of org.json.JSONObject on the class path:
 
@@ -22,26 +22,26 @@ Found multiple occurrences of org.json.JSONObject on the class path:
 
 You may wish to exclude one of them to ensure predictable runtime behavior
 
-2024-02-15T13:47:10.438+01:00  INFO 12848 --- [    Test worker] c.m.p.unit.PatientsApplicationTests      : Starting PatientsApplicationTests using Java 17.0.7 with PID 12848 (started by simon in C:\Users\simon\Documents\OpenClassrooms\Projets\09 Développez une solution en microservices pour votre client\Microservices\OC_DA_JAVA_P9_Patient\patients)
-2024-02-15T13:47:10.438+01:00  INFO 12848 --- [    Test worker] c.m.p.unit.PatientsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
-2024-02-15T13:47:11.144+01:00  INFO 12848 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-15T13:47:11.145+01:00  INFO 12848 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2024-02-15T13:47:11.267+01:00  INFO 12848 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.medilabo.patients.repository.PatientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2024-02-15T13:47:11.268+01:00  INFO 12848 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 0 JDBC repository interfaces.
-2024-02-15T13:47:11.290+01:00  INFO 12848 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2024-02-15T13:47:11.294+01:00  INFO 12848 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-02-15T13:47:11.315+01:00  INFO 12848 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 1 JPA repository interface.
-2024-02-15T13:47:11.491+01:00  INFO 12848 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-02-15T13:47:11.497+01:00  INFO 12848 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-02-15T13:47:11.506+01:00  INFO 12848 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-02-15T13:47:11.508+01:00  INFO 12848 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
-2024-02-15T13:47:11.508+01:00  WARN 12848 --- [    Test worker] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
-2024-02-15T13:47:11.646+01:00  INFO 12848 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@765650e4
-2024-02-15T13:47:11.646+01:00  INFO 12848 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
-2024-02-15T13:47:11.706+01:00  INFO 12848 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-02-15T13:47:11.721+01:00  INFO 12848 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-02-15T13:47:11.853+01:00  WARN 12848 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-02-15T13:47:12.137+01:00  INFO 12848 --- [    Test worker] c.m.p.unit.PatientsApplicationTests      : Started PatientsApplicationTests in 1.736 seconds (process running for 12.769)
+2024-03-01T11:50:44.698+01:00  INFO 12720 --- [    Test worker] c.m.p.unit.PatientsApplicationTests      : Starting PatientsApplicationTests using Java 17.0.7 with PID 12720 (started by simon in C:\Users\simon\Documents\OpenClassrooms\Projets\09 Développez une solution en microservices pour votre client\Microservices\OC_DA_JAVA_P9_Patient\patients)
+2024-03-01T11:50:44.698+01:00  INFO 12720 --- [    Test worker] c.m.p.unit.PatientsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2024-03-01T11:50:45.079+01:00  INFO 12720 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-01T11:50:45.080+01:00  INFO 12720 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2024-03-01T11:50:45.101+01:00  INFO 12720 --- [    Test worker] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.medilabo.patients.repository.PatientRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2024-03-01T11:50:45.102+01:00  INFO 12720 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2024-03-01T11:50:45.107+01:00  INFO 12720 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-01T11:50:45.108+01:00  INFO 12720 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-01T11:50:45.152+01:00  INFO 12720 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 1 JPA repository interface.
+2024-03-01T11:50:45.500+01:00  INFO 12720 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-01T11:50:45.511+01:00  INFO 12720 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-01T11:50:45.525+01:00  INFO 12720 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-01T11:50:45.530+01:00  INFO 12720 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2024-03-01T11:50:45.530+01:00  WARN 12720 --- [    Test worker] c.zaxxer.hikari.util.DriverDataSource    : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2024-03-01T11:50:46.498+01:00  INFO 12720 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34adce96
+2024-03-01T11:50:46.498+01:00  INFO 12720 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2024-03-01T11:50:46.630+01:00  INFO 12720 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-01T11:50:46.750+01:00  INFO 12720 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-01T11:50:46.908+01:00  WARN 12720 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-01T11:50:47.215+01:00  INFO 12720 --- [    Test worker] c.m.p.unit.PatientsApplicationTests      : Started PatientsApplicationTests in 2.561 seconds (process running for 18.907)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
